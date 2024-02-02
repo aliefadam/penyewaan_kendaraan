@@ -1,0 +1,66 @@
+@import url("style.css");
+
+.scroll {
+    margin: 30px;
+    height: calc(100vh - 120px);
+    background-color: white;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 30px;
+    overflow: auto;
+}
+
+.scroll h1 {
+    color: var(--primary);
+    font-size: 30px;
+    text-align: center;
+}
+
+.scroll table {
+    margin-top: 20px;
+    white-space: nowrap;
+    width: 100%;
+    border: 1px solid var(--primary);
+    padding: 0;
+}
+
+.scroll table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 10px;
+}
+
+.scroll table td {
+    padding: 10px;
+    border: 1px solid var(--primary);
+}
+
+.scroll table a.tombol {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.scroll table a.tombol.diterima {
+    background-color: #1d6f42;
+    transition: 500ms;
+}
+
+.scroll table a.tombol.diterima:hover {
+    background-color: #165c36;
+}
+
+.scroll table a.tombol.ditolak {
+    transition: 500ms;
+    background-color: var(--primary);
+}
+
+.scroll table a.tombol.ditolak:hover {
+    background-color: #b33c3c;
+}
+
+@media only screen and (max-width: 600px) {
+    .scroll h1 {
+        font-size: 20px;
+    }
+}

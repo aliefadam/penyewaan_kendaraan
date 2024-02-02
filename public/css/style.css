@@ -1,0 +1,395 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --primary: #d24545;
+    --secondary: #a94438;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #eee;
+    position: relative;
+}
+
+aside {
+    width: 20%;
+    background-color: var(--primary);
+}
+
+aside .close-sidebar {
+    display: none;
+}
+
+aside .logo {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+aside i {
+    font-size: 25px;
+    color: white;
+}
+
+aside .logo h1 {
+    color: white;
+    font-size: 20px;
+}
+
+aside .menu {
+    margin-top: 10px;
+}
+
+aside .menu .menu-item {
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 300ms;
+}
+
+aside .menu .menu-item:hover {
+    background-color: white;
+    opacity: 0.9;
+
+    i,
+    span {
+        font-weight: 600;
+        color: var(--primary);
+    }
+}
+
+aside .menu .menu-item.active {
+    background-color: white;
+
+    i,
+    span {
+        font-weight: 600;
+        color: var(--primary);
+    }
+}
+
+aside .menu .menu-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+aside .menu .menu-item i {
+    font-size: 20px;
+}
+
+aside .menu .menu-item i,
+aside .menu .menu-item span {
+    color: white;
+}
+
+main {
+    width: 80%;
+}
+
+main nav {
+    padding: 0 30px;
+    background-color: white;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+main nav .nama img {
+    display: none;
+}
+
+main nav .nama h1 {
+    color: var(--primary);
+}
+
+main nav .logout a {
+    background-color: var(--primary);
+    color: white;
+    padding: 7px 20px;
+    border-radius: 8px;
+    display: flex;
+    gap: 7px;
+    transition: 500ms;
+}
+
+main nav .logout a:hover {
+    background-color: #b33c3c;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay .notifikasi {
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.overlay .notifikasi img {
+    width: 100px;
+    transition: 300ms;
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.5));
+}
+
+.overlay .notifikasi img.animate {
+    transform: scale(1.1);
+}
+
+.overlay .notifikasi span {
+    font-weight: 600;
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.overlay .notifikasi i {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: 300ms;
+    transform: scale(1);
+    display: flex;
+}
+
+.overlay .notifikasi i:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+.overlay .notifikasi .aksi {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.overlay .notifikasi .aksi button {
+    border: none;
+    padding: 15px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    transition: 500ms;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.overlay .notifikasi .aksi button.yakin {
+    background-color: #1d6f42;
+}
+
+.overlay .notifikasi .aksi button.yakin:hover {
+    background-color: #165c36;
+}
+
+.overlay .notifikasi .aksi button.tidak {
+    background-color: var(--primary);
+}
+
+.overlay .notifikasi .aksi button.tidak:hover {
+    background-color: #b33c3c;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        transform: translateY(-30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-30px);
+    }
+}
+
+.admin {
+    height: calc(100vh - 60px);
+    padding: 30px;
+}
+
+.admin .grafik h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 30px;
+}
+
+.admin .grafik {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    outline: 1px solid var(--primary);
+    border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+
+    nav {
+        width: 100% !important;
+    }
+
+    nav .nama {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    nav .nama img {
+        display: block !important;
+        width: 23px;
+        cursor: pointer;
+        opacity: 1;
+        font-size: 30px;
+        color: var(--primary);
+    }
+
+    nav .logout a {
+        font-size: 13px;
+    }
+
+    aside {
+        position: fixed;
+        top: 0;
+        left: -350px;
+        height: 100vh;
+        width: 60%;
+        box-shadow: 2px 0 10px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    aside .close-sidebar {
+        display: block !important;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 50%;
+        transition: 500ms;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    aside .close-sidebar:hover {
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    aside .close-sidebar i {
+        display: flex;
+        color: var(--primary);
+    }
+
+    .admin .grafik h1 {
+        font-size: 20px;
+    }
+
+    .overlay {
+        padding: 30px;
+    }
+
+    .overlay .notifikasi {
+        width: 100%;
+    }
+
+    .overlay .notifikasi img {
+        width: 70px;
+    }
+
+    .overlay .notifikasi span {
+        font-size: 25px;
+        display: inline-block;
+        text-align: center;
+    }
+}
+
+@keyframes slideRight {
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        left: 0;
+    }
+    to {
+        left: -350px;
+    }
+}
